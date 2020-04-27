@@ -1,6 +1,4 @@
-Environment
-
-tensorflow 1.15
+Environment:tensorflow 1.15
 
 
 
