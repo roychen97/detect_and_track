@@ -1,0 +1,28 @@
+{
+  "input_size" : 300,
+  "bias":[128.0, 128.0, 128.0],
+  "model_file" : "ssd_mobilenetV2_300",
+  "logdir" : "./logs_mobilenet_wework/",
+  "train_tfrecord_dir" : "./dataset/wework_tfrecords",
+  "layers_shapes" : [[19, 19], [10, 10], [5, 5], [3, 3], [2, 2], [1, 1]],
+  "anchor_scales" : [[0.1], [0.2], [0.375], [0.55], [0.725], [0.9]],
+  "extra_anchor_scales" : [[0.1414], [0.2739], [0.4541], [0.6315], [0.8078], [0.9836]],
+  "anchor_ratios": [[1.5, 1.0, 0.5], [1.5, 1.0, 0.5], 
+                  [1.5, 1.0, 0.5], 
+                  [1.5, 1.0, 0.5], 
+                  [1.5, 1.0, 0.5], [1.5, 1.0, 0.5]],
+  "layer_steps" :[16, 32, 64, 100, 150, 300],
+  "layer_num" : 6,
+  "num_classes": 2,
+  "batch_size": 48,
+  "data_format":"channels_first",
+  "num_epochs": 100000,
+  "l2_strength": 5e-6,
+  "learning_rate": 1e-2,
+  "pretrained_path": "./model/ssd_mobilenet_v2_coco_2018_03_29",
+  "checkpoint_model_scope": "FeatureExtractor/MobilenetV2",
+  "save_model_every": 1,
+  "test_every": 1,
+  "freeze_file": "person_ssd_model_nms_fz"
+}
+
